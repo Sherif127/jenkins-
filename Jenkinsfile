@@ -4,8 +4,10 @@ pipeline {
     stages {
         stage('Create File') {
             steps {
-                sh "echo "Hello from Jenkins!" > nti.txt" 
-                sh "cat nti.txt"
+                sh '''
+                   echo "Hello from Jenkins!" > nti.txt
+                   cat nti.txt
+                '''
             }
         }
     }
