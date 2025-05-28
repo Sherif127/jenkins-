@@ -1,28 +1,19 @@
 pipeline {
     agent any
-
     stages {
-        stage('Clone') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Sherif127/jenkins-.git'
-            }
-        }
-
         stage('Build') {
             steps {
-                echo 'Building the project...'
+                echo "Building branch ${env.BRANCH_NAME}"
             }
         }
-
         stage('Test') {
             steps {
-                echo 'Running tests...'
+                echo "Testing branch ${env.BRANCH_NAME}"
             }
         }
-
         stage('Deploy') {
             steps {
-                echo 'Deploying application...'
+                echo "Deploying branch ${env.BRANCH_NAME}"
             }
         }
     }
